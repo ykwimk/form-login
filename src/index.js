@@ -4,15 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'mobx-react';
-import SignupStore from './stores/signup';
+import UserStore from './stores/user';
 
-const signup = new SignupStore()
+const user = new UserStore();
 
 ReactDOM.render(
-  <Provider>
+  <Provider user={user}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 serviceWorker.unregister();
